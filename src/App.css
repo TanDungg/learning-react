@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
 }
-
-.App-header {
-  background-color: #282c34;
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
   min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.youtube {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px;
+  padding: 25px;
+}
+
+.image img {
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.footer {
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  gap: 0 10px;
+}
+
+.avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.account {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #c8c8c8;
+  font-weight: 400;
+}
+
+.toggle {
+  width: 100px;
+  height: 50px;
+  background-color: #c8c8c8;
+  padding: 5px;
+  border-radius: 100rem;
+  margin: 25px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.toggle.active {
+  background-color: blue;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 100rem;
+  transition: all 0.2s linear;
+}
+
+.spinner.active {
+  transform: translateX(50px);
+}
+
+.toggle-control {
+  margin: 0 25px;
+  display: flex;
   align-items: center;
+  gap: 0 10px;
+}
+
+.toggle-control > * {
+  cursor: pointer;
+}
+
+.game-board {
+  margin: 25px;
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 25px;
+}
+
+.game-cell {
+  cursor: pointer;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-weight: bold;
+  font-size: 60px;
+  box-shadow: #c8c8c8 0px 8px 24px;
+  border-radius: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.game-cell.isX {
+  color: darkcyan;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-cell.isO {
+  color: chocolate;
+}
+
+.game-reset {
+  margin: 25px;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #6a5af9;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.game-winner {
+  padding: 25px;
+  font-size: 20px;
 }

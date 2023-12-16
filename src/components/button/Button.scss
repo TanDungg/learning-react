@@ -1,0 +1,18 @@
+.button {
+  display: inline-block;
+  padding: 20px 30px;
+  margin: 10px;
+  color: #fff;
+  font-size: 16px;
+  background-color: #1b7bc9;
+  border-radius: 8px;
+  width: 200px;
+  border: none;
+  outline: none;
+
+  &--children {
+    background-color: transparent;
+    border: 1px solid #1b7bc9;
+    color: #1b7bc9;
+  }
+}
